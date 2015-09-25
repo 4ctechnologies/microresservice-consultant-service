@@ -41,7 +41,7 @@ public class ConsultantService {
     public ResponseEntity<Consultant> create(@RequestBody Consultant consultant) {
         LOG.info("/consultants create method called");
         Consultant createdConsultant = repo.save(consultant);
-        return new ResponseEntity<>(consultant, HttpStatus.OK);
+        return new ResponseEntity<>(createdConsultant, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "{id}")
@@ -57,7 +57,7 @@ public class ConsultantService {
         return new ResponseEntity<>(updatedConsultant, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "{id}")
     public ResponseEntity<Consultant> delete(@PathVariable String id) {
         LOG.info("/consultants delete method called");
         Consultant consultant = repo.findOne(id);

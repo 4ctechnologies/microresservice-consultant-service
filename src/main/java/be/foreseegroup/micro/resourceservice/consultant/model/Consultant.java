@@ -18,6 +18,13 @@ public class Consultant {
     public Consultant() {
 
     }
+
+    public Consultant(String firstname, String lastname, String address) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.address = address;
+    }
+
     public Consultant(String id, String firstname, String lastname, String address) {
         this.id = id;
         this.firstname = firstname;
